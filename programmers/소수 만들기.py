@@ -25,17 +25,26 @@ from itertools import combinations
 
 
 def isPrime(num):
-    for i in range(2, num//2+1):
-        if num == 0:
-            False
-        if num % i != 0:
-            False
-        else:
-            True
+    if num == 0:
+        return 0
+    for i in range(2, int(num/2)+1):
+        if num % i == 0:
+            return 0
+    else:
+        return 1
 
 
 def solution(nums):
     answer = 0
     arr = list(combinations(nums, 3))
+    print(arr)
     for i in arr:
-        cnt += sum(i[0]+i[1]+i[2])
+        print(i[0]+i[1]+i[2])
+        answer += isPrime(i[0]+i[1]+i[2])
+    return answer
+
+# 배운 점
+# for else문을 사용할 수 있음에 주의
+# for else문은 for가 끝난 뒤에, 마지막으로 특정한 행동을 해줌.
+# for문을 돌릴때 조건을 충족하지 않는 경우에서 쉽게 사용할 수 있음.
+# 에라토스테네스의 체를 쉽게 구현하는 이분 탐색 기법에 유의
