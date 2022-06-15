@@ -3,11 +3,9 @@ sys.stdin = open("inflearn/mysolution/input.txt", "rt")
 
 # matix의 크기
 n = int(input())
-
 m = [list(map(int, input().split())) for _ in range(n)]
 
 change_n = int(input())
-
 change_m = []
 for i in range(change_n):
 

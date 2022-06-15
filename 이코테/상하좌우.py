@@ -1,19 +1,19 @@
 n = 5
-plans = ["L", "L", "R", "D", "D"]
+plans = ["R", "L", "L", "D", "D", "L"]
 
-x, y = 1, 1
+x = 1
+y = 1
 
-directions = ["R", "L", "U", "D"]
+direction = ["R", "L", "U", "D"]
 dx = [1, -1, 0, 0]
 dy = [0, 0, -1, 1]
 
 for plan in plans:
-    for d_idx in range(len(directions)):
-        if plan == directions[d_idx]:
-            nx = x + dx[d_idx]
-            ny = y + dy[d_idx]
-    if nx <= 0 or ny <= 0 or nx > n or ny > n:
-        continue  # continue의 용도를 알아두기.
-    x = nx
-    y = ny
-    print(x, y)
+    for i in range(len(direction)):
+        if direction[i] == plan:
+            tmp_x = x + dx[i]
+            tmp_y = y + dy[i]
+    if tmp_x == 0 or tmp_y == 0:
+        x = tmp_x
+        y = tmp_y
+    print(plan, x, y)
