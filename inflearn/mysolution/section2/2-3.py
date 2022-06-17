@@ -6,16 +6,16 @@
 # 문제: list내에서 중복된 수가 들어갈 수 있다.
 
 import sys
-sys.stdin = open("input.txt", "rt")
+sys.stdin = open("inflearn/mysolution/input.txt", "rt")
 n, k = map(int, input().split())
-a = list(map(int, input().split()))
+a_list = list(map(int, input().split()))
 res = set()
 
-for tmp1 in range(n):
-    for tmp2 in range(tmp1, n):
-        for tmp3 in range(tmp2, n):
-            res.add(a[tmp1] + a[tmp2] + a[tmp3])
+for a in range(n):
+    for b in range(a, n):
+        for c in range(b, n):
+            res.add(a_list[a] + a_list[b] + a_list[c])
 
 res = list(res)
 res.sort(reverse=True)
-print(res)
+print(res[k-1])
