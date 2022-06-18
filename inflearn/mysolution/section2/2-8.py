@@ -8,7 +8,7 @@ a = list(map(int, input().split()))
 def reverse(x):
     reverse_val = 0
     while x > 0:
-        res = x % 10  # 나머지가 t
+        res = x % 10  # 나머지가 res
         reverse_val = reverse_val * 10 + res
         x = x // 10
     return reverse_val
