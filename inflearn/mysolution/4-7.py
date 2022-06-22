@@ -1,4 +1,3 @@
-from cgitb import small
 import sys
 sys.stdin = open("inflearn/mysolution/input.txt", "rt")
 
