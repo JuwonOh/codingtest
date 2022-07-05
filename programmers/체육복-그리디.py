@@ -1,21 +1,21 @@
 ##https://programmers.co.kr/learn/courses/30/lessons/42862
-## 
+## https://www.notion.so/95eac0a5d0b241adb462c11b9a0bc034
 
 
 def solution(n, lost, reserve):
     cnt =0 
     for x in lost:
-        if x-1 in reserve:
-            reserve.remove(x-1)
+        if x in reserve:
+            reserve.remove(x)
             cnt += 1
+        
         elif x+1 in reserve:
             reserve.remove(x+1)
             cnt += 1
-        elif x in reserve:
-            reserve.remove(x)
+        elif x-1 in reserve:
+            reserve.remove(x-1)
             cnt += 1
-        print(lost, reserve, cnt)
-        
+    print(lost, reserve, cnt)    
     answer = n- len(lost) +cnt
     return answer
 
