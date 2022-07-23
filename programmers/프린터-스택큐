@@ -22,3 +22,19 @@ def solution(priorities, location):
 
 
 solution(priorities, location)
+
+
+from collections import deque
+
+def solution(priorities, location):
+	cnt = 0
+	priorities = deque((num, pri) for num, pri in enumerate(priorities))
+	while priorities:
+		cur = priorities.popleft
+		if any(cur[1] < x[1] for x in priorities):
+			priorities.append(cur)
+		else:
+			cnt += 1
+			if cur[0] == location:
+				print(cnt)
+				break

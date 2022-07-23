@@ -1,13 +1,14 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/42885
 
-def solution(people, limit):
+def solution(limit, people):
     people = sorted(people)
-    cnt = 0
     s = 0
-    l = len(people) - 1
-    while s <= l:
+    e = len(people)-1
+    cnt = 0
+    while s <= e:
         cnt += 1
-        if people[s]+people[l] <= limit:
+        if people[s] + people[e] <= limit:
             s += 1
-        l -= 1
+        e -= 1
+    print(cnt)
     return cnt
