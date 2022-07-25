@@ -5,15 +5,19 @@ n = int(input())
 a_list = list(map(int, input().split()))
 total = sum(a_list)
 
+print(total)
 
-def DFS(L, sum):
-    if sum > total / 2:
+
+def DFS(index, t_sum):
+    if t_sum > total // 2:
         return
-
-    if L == n:
-        if sum == (total - sum):
+    if n == index:
+        if t_sum == (total - t_sum):
             print("Yes")
             sys.exit(0)
     else:
-        DFS(L + 1, sum + a_list[L])  # l번째 수를 더한 경우.
-        DFS(L + 1, sum)  # l번째 수를 안 더한 경우
+        DFS(index + 1, t_sum + a_list[index])
+        DFS(index + 1, t_sum)
+
+
+DFS(0, 0)
