@@ -3,7 +3,6 @@ sys.stdin = open("inflearn/mysolution/input.txt", "rt")
 
 n, m = map(int, input().split())
 res = [0] * m
-temp = []
 
 
 def dfs(index):
