@@ -1,4 +1,3 @@
-
 import sys
 sys.stdin = open("inflearn/mysolution/input.txt", "rt")
 
@@ -7,14 +6,12 @@ n = int(input())
 graph = []
 
 for _ in range(n):
-    array = list(input().strip().split(' '))
+    array = list(input().split(''))
     teacher += array.count("T")
     graph.append(array)
-# 상하좌우 움직이기 -> 같은 열행에 T가 있으며 안된다.
+
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
-
-# 한명이라도 학생을 볼 수 있으면 안된다.
 
 
 def watch(x, y):
@@ -22,13 +19,13 @@ def watch(x, y):
         nx = x + dx[i]
         ny = y + dy[i]
 
-        while 0 <= nx < n and 0 <= ny < n and graph[nx][ny] != "O":
-            # 일직선상에 있는 학생을 다 살펴본다.
-            if graph[nx][ny] == "S":
-                return True
-            else:
-                nx += dx[i]
-                ny += dy[i]
+    # 조건 1. 같은 직선상에서 s가 있으면 True
+    while 0 <= nx < n and 0 <= ny < n and graph[nx][ny] != "O":
+        if graph[nx][ny] == "S":
+            return True
+        else:
+            nx += dx[i]
+            ny += dy[i]
     return False
 
 
