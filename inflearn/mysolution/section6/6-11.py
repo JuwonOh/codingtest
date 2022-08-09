@@ -6,7 +6,7 @@ n_list = list(map(int, input().split()))
 divided = int(input())
 res = [0] * (k + 1)
 temp = []
-
+a
 
 def DFS(index, sequence):
     t_sum = 0
