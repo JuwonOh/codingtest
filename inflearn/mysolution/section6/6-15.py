@@ -5,27 +5,31 @@ n, m = map(int, input().split())
 graph = [[0] * (n+1) for _ in range(n)]
 visited = [0] * (n+1)
 cnt = 0
-res = []
+path = []
+print(visited)
 
 for i in range(m):
     x, y = map(int, input().split())
     graph[x][y] = 1
 
+cnt = 0
 
-def DFS(node):
+
+def dfs(node):
     global cnt
+    global path
+
     if node == n:
         cnt += 1
-        res.append([i for i, x in enumerate(visited) if x])
+        path.append([index for index, x in enumerate(visited) if x])
     else:
-        for i in range(1, n + 1):
+        for i in range(1, n+1):
             if visited[i] == 0 and graph[node][i] == 1:
                 visited[i] = 1
-                DFS(i)
+                dfs(i)
                 visited[i] = 0
 
 
 visited[1] = 1
-DFS(1)
-print(cnt)
-print(res)
+dfs(1)
+print(path)
