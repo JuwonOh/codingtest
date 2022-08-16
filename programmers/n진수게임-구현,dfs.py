@@ -2,7 +2,6 @@
 
 n, t, m, p = 2, 4, 2, 1
 
-
 def convert(num, geesu):
     nums = "01234567890ABCDEF"
     q, r = divmod(num, geesu)
