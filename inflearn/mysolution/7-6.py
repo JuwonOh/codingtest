@@ -12,23 +12,25 @@ res = []
 
 
 def dfs(index, position):
-    global word, res, cnt
+    global word, cnt
     if index == n:
         cnt += 1
+        print(word)
         res.append(word)
         word = ""
 
     else:
-        for i in range(0, len(alpha)):
+        for i in range(1, len(alpha)+1):
+            print(i, int(code[index]), i == int(code[index]))
             # index가 1의 자리수인 경우.
             if i == int(code[index]):
-                word += alpha[i]
-                print(i, index)
+                word += alpha[i-1]
+                print(word, index)
                 dfs(index + 1, position + 1)
             # index가 십의 자리 수인 경우.
-            elif len(str(i)) == 2 and code[index] == i//10 and code[index+1] == i % 10:
-                word += alpha[i]
-                print(i, index)
+            # code가 str이기 때문에, code[index]도 str이다. 자료형에 주의할 것.
+            if len(str(i)) == 2 and int(code[index]) == i//10 and int(code[index+1]) == i % 10:
+                word += alpha[i-1]
                 dfs(index+2, position + 1)
 
 
