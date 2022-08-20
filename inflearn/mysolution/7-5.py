@@ -45,3 +45,10 @@ def dfs(index, a, b, c):
 
 dfs(0, 0, 0, 0)
 print(min_differ)
+
+
+import string
+n = int(input())
+word = ""
+alphabet = string.ascii_uppercase
+res = []
