@@ -1,4 +1,3 @@
-from collections import deque
 import sys
 
 sys.stdin = open("inflearn/mysolution/input.txt", "rt")
@@ -23,6 +22,7 @@ def dfs(x, y):
                 maze[x_change][y_change] = 1
                 dfs(x_change, y_change)
                 maze[x_change][y_change] = 0
+
 
 dfs(0, 0)
 print(cnt)
