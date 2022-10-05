@@ -21,6 +21,7 @@
 # [2,4,7]을 이용해서 13을 만들 수 있습니다.
 # [4,6,7]을 이용해서 17을 만들 수 있습니다.
 
+from abc import abstractmethod
 from itertools import combinations
 
 
@@ -48,3 +49,7 @@ def solution(nums):
 # for else문은 for가 끝난 뒤에, 마지막으로 특정한 행동을 해줌.
 # for문을 돌릴때 조건을 충족하지 않는 경우에서 쉽게 사용할 수 있음.
 # 에라토스테네스의 체를 쉽게 구현하는 이분 탐색 기법에 유의
+
+
+
+     
